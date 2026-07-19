@@ -23,7 +23,7 @@
   // Sunday verified; Mon = evening continuous; Tue–Sat = morning + evening split.
   const HOURS = [
     { day: "Sunday",    time: "5:30 am – 12:00 pm", verified: true },
-    { day: "Monday",    time: "5:30 am – 9:00 pm",  verified: true },
+    { day: "Monday",    time: "5:30 am – 12:00 pm", verified: true },
     { day: "Tuesday",   time: "5:30–12:00 pm · 5:30–9:00 pm", verified: true },
     { day: "Wednesday", time: "5:30–12:00 pm · 5:30–9:00 pm", verified: true },
     { day: "Thursday",  time: "5:30–12:00 pm · 5:30–9:00 pm", verified: true },

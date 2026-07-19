@@ -38,8 +38,14 @@
   ];
 
   const GALLERY = [
-    "Gym floor", "Strength area", "Cardio zone", "Reception / desk",
-    "Changing room", "Group corner",
+    { src: "assets/photos/ig_2.jpg", caption: "Training floor" },
+    { src: "assets/photos/ig_5.jpg", caption: "Workout session" },
+    { src: "assets/photos/ig_6.jpg", caption: "Gold Gym Proddatur" },
+    { src: "assets/photos/ig_7.jpg", caption: "Members" },
+    { src: "assets/photos/ig_8.jpg", caption: "At the gym" },
+    { src: "assets/photos/ig_9.jpg", caption: "Coaching" },
+    { src: "assets/photos/ig_10.jpg", caption: "Strength training" },
+    { src: "assets/photos/ig_11.jpg", caption: "16kg loss in 100 days" },
   ];
 
   /* ---------- Render: services ---------- */
@@ -84,10 +90,10 @@
   function renderGallery() {
     const grid = document.getElementById("galleryGrid");
     if (!grid) return;
-    grid.innerHTML = GALLERY.map(label => `
-      <div class="gallery-item reveal" data-label="${label}">
-        <span class="ph-icon">📷</span>
-        <span class="ph-text">${label}</span>
+    grid.innerHTML = GALLERY.map(g => `
+      <div class="gallery-item reveal">
+        <img src="${g.src}" alt="${g.caption}" loading="lazy" />
+        <span class="gallery-cap">${g.caption}</span>
       </div>`).join("");
   }
 

@@ -166,7 +166,7 @@ code { background: var(--surface-2); padding: .1em .35em; border-radius: 6px; fo
 .plan.featured { border-color: var(--gold); background: linear-gradient(180deg, #211a0b, var(--surface)); }
 
 /* ---------- Hours ---------- */
-.hours-wrap { display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; align-items: center; }
+.hours-wrap { display: grid; grid-template-columns: 1fr; gap: 2rem; align-items: start; max-width: 640px; }
 .hours-table { width: 100%; border-collapse: collapse; background: var(--surface); border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow); }
 .hours-table td { padding: .8rem 1.1rem; border-bottom: 1px solid var(--border); font-size: .96rem; }
 .hours-table tr:last-child td { border-bottom: none; }

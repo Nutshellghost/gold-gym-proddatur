@@ -44,6 +44,7 @@
     { src: "assets/photos/gallery_4.jpg", caption: "" },
     { src: "assets/photos/gallery_5.jpg", caption: "" },
     { src: "assets/photos/gallery_6.jpg", caption: "" },
+    { src: "assets/photos/gallery_7.jpg", caption: "" },
   ];
 
   /* ---------- Render: services ---------- */

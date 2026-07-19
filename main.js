@@ -38,14 +38,14 @@
   ];
 
   const GALLERY = [
-    { src: "assets/photos/ig_2.jpg", caption: "Training floor" },
-    { src: "assets/photos/ig_5.jpg", caption: "Workout session" },
-    { src: "assets/photos/ig_6.jpg", caption: "Gold Gym Proddatur" },
-    { src: "assets/photos/ig_7.jpg", caption: "Members" },
-    { src: "assets/photos/ig_8.jpg", caption: "At the gym" },
-    { src: "assets/photos/ig_9.jpg", caption: "Coaching" },
-    { src: "assets/photos/ig_10.jpg", caption: "Strength training" },
-    { src: "assets/photos/ig_11.jpg", caption: "16kg loss in 100 days" },
+    { src: "assets/photos/ig_6.jpg", caption: "Inside the gym" },
+    { src: "assets/photos/ig_9.jpg", caption: "Personal training" },
+    { src: "assets/photos/ig_10.jpg", caption: "Back day" },
+    { src: "assets/photos/ig_7.jpg", caption: "Our athlete" },
+    { src: "assets/photos/ig_11.jpg", caption: "−16 kg in 100 days" },
+    { src: "assets/photos/ig_2.jpg", caption: "Cardio vs Strength" },
+    { src: "assets/photos/ig_5.jpg", caption: "Fuel: Greek Yogurt" },
+    { src: "assets/photos/ig_8.jpg", caption: "Eid Mubarak" },
   ];
 
   /* ---------- Render: services ---------- */

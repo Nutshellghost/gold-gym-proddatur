@@ -19,16 +19,16 @@
     { ico: "⏰", title: "Early Opening", desc: "Doors open from 5:30 am — train before work or school." },
   ];
 
-  // Weekday timings are a TYPICAL gym schedule (per Maps note).
-  // Sunday (0) is the only VERIFIED day from Google Maps.
+  // Hours provided by the gym owner (Jul 2026).
+  // Sunday verified; Mon = evening continuous; Tue–Sat = morning + evening split.
   const HOURS = [
     { day: "Sunday",    time: "5:30 am – 12:00 pm", verified: true },
-    { day: "Monday",    time: "5:30 am – 9:00 pm",  verified: false },
-    { day: "Tuesday",   time: "5:30 am – 9:00 pm",  verified: false },
-    { day: "Wednesday", time: "5:30 am – 9:00 pm",  verified: false },
-    { day: "Thursday",  time: "5:30 am – 9:00 pm",  verified: false },
-    { day: "Friday",    time: "5:30 am – 9:00 pm",  verified: false },
-    { day: "Saturday",  time: "6:00 am – 8:00 pm",  verified: false },
+    { day: "Monday",    time: "5:30 am – 9:00 pm",  verified: true },
+    { day: "Tuesday",   time: "5:30–12:00 pm · 5:30–9:00 pm", verified: true },
+    { day: "Wednesday", time: "5:30–12:00 pm · 5:30–9:00 pm", verified: true },
+    { day: "Thursday",  time: "5:30–12:00 pm · 5:30–9:00 pm", verified: true },
+    { day: "Friday",    time: "5:30–12:00 pm · 5:30–9:00 pm", verified: true },
+    { day: "Saturday",  time: "5:30–12:00 pm · 5:30–9:00 pm", verified: true },
   ];
 
   const PLANS = [

@@ -93,13 +93,18 @@ code { background: var(--surface-2); padding: .1em .35em; border-radius: 6px; fo
 }
 .hero-bg {
   position: absolute; inset: 0;
-  background-size: cover; background-position: center;
+  background-size: cover; background-position: center 35%;
   background-color: #121319;
-  opacity: .55;
+  opacity: .5;
+  transform: scale(1.05);
+  animation: heroZoom 14s ease-out forwards;
 }
+@keyframes heroZoom { from { transform: scale(1.12); } to { transform: scale(1.0); } }
 .hero-overlay {
   position: absolute; inset: 0;
-  background: linear-gradient(105deg, rgba(14,15,18,.94) 30%, rgba(14,15,18,.55) 70%, rgba(14,15,18,.35) 100%);
+  background:
+    linear-gradient(100deg, rgba(10,11,14,.97) 24%, rgba(10,11,14,.78) 52%, rgba(10,11,14,.45) 78%, rgba(10,11,14,.30) 100%),
+    radial-gradient(80% 120% at 85% 30%, rgba(40,50,80,.25), transparent 60%);
 }
 .hero-inner {
   position: relative; max-width: var(--maxw); margin: 0 auto;
@@ -325,4 +330,5 @@ code { background: var(--surface-2); padding: .1em .35em; border-radius: 6px; fo
   html { scroll-behavior: auto; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
   .btn:hover, .card:hover { transform: none; }
+  .hero-bg { animation: none; transform: scale(1.02); }
 }

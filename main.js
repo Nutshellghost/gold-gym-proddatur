@@ -38,14 +38,12 @@
   ];
 
   const GALLERY = [
-    { src: "assets/photos/ig_6.jpg", caption: "Inside the gym" },
-    { src: "assets/photos/ig_9.jpg", caption: "Personal training" },
-    { src: "assets/photos/ig_10.jpg", caption: "Back day" },
-    { src: "assets/photos/ig_7.jpg", caption: "Our athlete" },
-    { src: "assets/photos/ig_11.jpg", caption: "−16 kg in 100 days" },
-    { src: "assets/photos/ig_2.jpg", caption: "Cardio vs Strength" },
-    { src: "assets/photos/ig_5.jpg", caption: "Fuel: Greek Yogurt" },
-    { src: "assets/photos/ig_8.jpg", caption: "Eid Mubarak" },
+    { src: "assets/photos/gallery_1.jpg", caption: "" },
+    { src: "assets/photos/gallery_2.jpg", caption: "" },
+    { src: "assets/photos/gallery_3.jpg", caption: "" },
+    { src: "assets/photos/gallery_4.jpg", caption: "" },
+    { src: "assets/photos/gallery_5.jpg", caption: "" },
+    { src: "assets/photos/gallery_6.jpg", caption: "" },
   ];
 
   /* ---------- Render: services ---------- */
@@ -91,9 +89,9 @@
     const grid = document.getElementById("galleryGrid");
     if (!grid) return;
     grid.innerHTML = GALLERY.map((g, i) => `
-      <div class="gallery-item reveal" data-idx="${i}" role="button" tabindex="0" aria-label="Enlarge ${g.caption}">
-        <img src="${g.src}" alt="${g.caption}" loading="lazy" />
-        <span class="gallery-cap">${g.caption}</span>
+      <div class="gallery-item reveal" data-idx="${i}" role="button" tabindex="0" aria-label="Enlarge photo ${i + 1}">
+        <img src="${g.src}" alt="${g.caption || 'Gold Gym Proddatur photo'}" loading="lazy" />
+        ${g.caption ? `<span class="gallery-cap">${g.caption}</span>` : ""}
       </div>`).join("");
     grid.querySelectorAll(".gallery-item").forEach(el => {
       const open = () => openLightbox(parseInt(el.dataset.idx, 10));
@@ -115,8 +113,10 @@
     }
     const g = GALLERY[idx];
     lb.querySelector("img").src = g.src;
-    lb.querySelector("img").alt = g.caption;
-    lb.querySelector(".lb-cap").textContent = g.caption;
+    lb.querySelector("img").alt = g.caption || "Gold Gym Proddatur photo";
+    const cap = lb.querySelector(".lb-cap");
+    cap.textContent = g.caption;
+    cap.style.display = g.caption ? "" : "none";
     lb.classList.add("open");
     document.body.style.overflow = "hidden";
   }

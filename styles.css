@@ -66,7 +66,8 @@ code { background: var(--surface-2); padding: .1em .35em; border-radius: 6px; fo
 }
 .brand { display: flex; align-items: center; gap: .5rem; font-weight: 800; }
 .brand:hover { text-decoration: none; }
-.brand-mark { font-size: 1.4rem; }
+.brand-mark { font-size: 1.4rem; display: inline-flex; }
+.brand-mark img { width: 34px; height: 34px; display: block; }
 .brand-name { letter-spacing: .04em; color: var(--text); }
 .brand-accent { color: var(--gold); }
 .brand-loc { color: var(--muted); font-size: .8rem; font-weight: 600; margin-left: .2rem; }

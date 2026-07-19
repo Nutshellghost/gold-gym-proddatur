@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="200" height="200" role="img" aria-label="Gold Gym Proddatur logo">
+  <defs>
+    <path id="arcTop" d="M 30 100 A 70 70 0 0 1 170 100" fill="none"/>
+    <path id="arcBot" d="M 34 100 A 66 66 0 0 0 166 100" fill="none"/>
+  </defs>
+  <!-- outer gold ring -->
+  <circle cx="100" cy="100" r="94" fill="#1a1206"/>
+  <circle cx="100" cy="100" r="90" fill="#f5b50a"/>
+  <circle cx="100" cy="100" r="74" fill="none" stroke="#1a1206" stroke-width="2"/>
+  <!-- curved brand text -->
+  <text font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="22" fill="#1a1206" letter-spacing="1">
+    <textPath href="#arcTop" startOffset="50%" text-anchor="middle">GOLD'S GYM</textPath>
+  </text>
+  <text font-family="Arial Black, Impact, sans-serif" font-weight="900" font-size="16" fill="#1a1206" letter-spacing="3">
+    <textPath href="#arcBot" startOffset="50%" text-anchor="middle">PRODDATUR</textPath>
+  </text>
+  <!-- black triangle -->
+  <polygon points="100,52 150,132 50,132" fill="#1a1206"/>
+  <!-- bodybuilder silhouette (stylized, original path) -->
+  <g fill="#fff">
+    <circle cx="100" cy="74" r="8.5"/>
+    <path d="M100 82
+             c -9 0 -15 5 -17 12
+             l -6 18 9 4 5 -14
+             c 2 6 4 14 4 22 l -7 22 9 4 7 -22
+             c 1 8 4 16 8 20 l 6 -8
+             c -4 -4 -6 -12 -7 -20 l 7 22 9 -4
+             -7 -22 c 0 -8 2 -16 4 -22 l 5 14 9 -4 -6 -18
+             c -2 -7 -8 -12 -17 -12 Z"/>
+  </g>
+</svg>

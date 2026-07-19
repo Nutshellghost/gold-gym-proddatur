@@ -16,7 +16,7 @@
     { ico: "🧘", title: "Flexibility & Mobility", desc: "Open space for stretching, mobility and cool-downs." },
     { ico: "📋", title: "Personal Coaching", desc: "Form checks and tailored plans — ask at the desk for availability." },
     { ico: "🚿", title: "Locker & Change Room", desc: "Basic changing area so you can train and go." },
-    { ico: "�05:30", title: "Early Opening", desc: "Doors open from 5:30 am — train before work or school." },
+    { ico: "⏰", title: "Early Opening", desc: "Doors open from 5:30 am — train before work or school." },
   ];
 
   // Weekday timings are a TYPICAL gym schedule (per Maps note).
@@ -86,15 +86,44 @@
       </div>`).join("");
   }
 
-  /* ---------- Render: gallery (placeholders) ---------- */
+  /* ---------- Render: gallery (real photos + lightbox) ---------- */
   function renderGallery() {
     const grid = document.getElementById("galleryGrid");
     if (!grid) return;
-    grid.innerHTML = GALLERY.map(g => `
-      <div class="gallery-item reveal">
+    grid.innerHTML = GALLERY.map((g, i) => `
+      <div class="gallery-item reveal" data-idx="${i}" role="button" tabindex="0" aria-label="Enlarge ${g.caption}">
         <img src="${g.src}" alt="${g.caption}" loading="lazy" />
         <span class="gallery-cap">${g.caption}</span>
       </div>`).join("");
+    grid.querySelectorAll(".gallery-item").forEach(el => {
+      const open = () => openLightbox(parseInt(el.dataset.idx, 10));
+      el.addEventListener("click", open);
+      el.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); open(); } });
+    });
+  }
+
+  function openLightbox(idx) {
+    let lb = document.getElementById("lightbox");
+    if (!lb) {
+      lb = document.createElement("div");
+      lb.id = "lightbox";
+      lb.className = "lightbox";
+      lb.innerHTML = `<button class="lb-close" aria-label="Close">✕</button><img alt="" /><span class="lb-cap"></span>`;
+      document.body.appendChild(lb);
+      lb.addEventListener("click", e => { if (e.target === lb || e.target.classList.contains("lb-close")) closeLightbox(); });
+      document.addEventListener("keydown", e => { if (e.key === "Escape") closeLightbox(); });
+    }
+    const g = GALLERY[idx];
+    lb.querySelector("img").src = g.src;
+    lb.querySelector("img").alt = g.caption;
+    lb.querySelector(".lb-cap").textContent = g.caption;
+    lb.classList.add("open");
+    document.body.style.overflow = "hidden";
+  }
+  function closeLightbox() {
+    const lb = document.getElementById("lightbox");
+    if (lb) lb.classList.remove("open");
+    document.body.style.overflow = "";
   }
 
   /* ---------- Mobile nav toggle ---------- */
